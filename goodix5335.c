@@ -172,6 +172,7 @@ enroll_ssm_handler (FpiSsm *ssm, FpDevice *device)
         goodix5335_process_image (self, processed);
         if (!self->enroll_samples)
             self->enroll_samples = g_ptr_array_new_with_free_func (g_free);
+
         g_ptr_array_add (self->enroll_samples, processed);
         self->enroll_stage++;
         fp_dbg ("Goodix 5335: sample %d/%d",
